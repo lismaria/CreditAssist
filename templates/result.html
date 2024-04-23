@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+            <div class="result_card">
+                <img src="{{ url_for('static', filename='pred.svg') }}">
+                <div>
+                    <h1>Prediction Result</h1>
+                    {% if prediction == 'good' %}
+                    <p style="color: #03EB97;">
+                    {% else %}
+                    <p style="color: #C84348;">
+                    {% endif %}
+                    {{ prediction }}
+                    </p>
+                </div>
+            </div>
+{% endblock %}

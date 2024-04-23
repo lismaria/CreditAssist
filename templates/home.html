@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+            <div class="home_card">
+                <img src="{{ url_for('static', filename='report.svg') }}">
+                <div>
+                    <i><h1><span style="color: #03EB97;">Credit</span><span style="color: #0099FF;">Assist</span></h1></i>
+                    <p>Unlock the power of data for informed credit assessments. <br>Your trusted companion in financial planning.</p>
+                    <div class="button_container">
+                        <button onclick="window.location.href='/about'">Know More</button>
+                        <button onclick="window.location.href='/data'">Get Started</button>
+                    </div>
+                </div>
+            </div>
+{% endblock %}

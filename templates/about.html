@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+            <div class="about_card">
+                <img src="{{ url_for('static', filename='about.svg') }}">
+                <div>
+                    <h1><span style="color: #0099FF;">About Us</span></h1>
+                    <p>
+                        Welcome to CreditAssist.<br>
+
+                        At CreditAssist, we understand the importance of making informed decisions about credit. Our platform offers a convenient way to classify customers' credit ratings based on their personal and bank account details. Whether you're a financial institution assessing loan applications or an individual looking to understand your creditworthiness, CreditAssist has you covered.
+                        <br>
+                        Our platform utilizes advanced classification techniques to accurately predict credit ratings, helping you streamline your decision-making process. With features like logistic regression and decision trees, we ensure robust and reliable results.
+                        <br>
+                        <h2 type="none" style="color: #0099FF;">Why <i><span style="color: #03EB97;">Credit</span>Assist</i> ?</h2>
+                        <ul>
+                            <li>Predictive modeling using state-of-the-art algorithms</li>
+                            <li>User-friendly interface for easy data input</li>
+                            <!-- <li>Visualizations of model performance metrics</li> -->
+                            <li>Secure and confidential handling of sensitive information</li>
+                        </ul>
+                    Empower your financial decisions with CreditAssist. Try our platform today and take control of your credit journey!</li>
+                        
+                    </p>
+                    <div class="button_container">
+                        <button onclick="window.location.href='/data'">Get Started</button>
+                    </div>
+                </div>
+            </div>
+{%endblock%}

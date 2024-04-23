@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+{% block content %}
+            <div class="card">
+                <form action="/predict" method="post">
+                    <div class="form_container">
+                    <div class="form_right">
+                        Checking Account: 
+                        <select id="CHK_ACCT" name="CHK_ACCT">
+                            <option value="0DM">0DM</option>
+                            <option value="less-200DM">less-200DM</option>
+                            <option value="over-200DM">over-200DM</option>
+                            <option value="no-account">No Account</option>
+                        </select><br><br>
+                        History: 
+                        <select id="History" name="History">
+                            <option value="delay">Delay</option>
+                            <option value="critical">Critical</option>
+                            <option value="duly-till-now">Duly till Now</option>
+                            <option value="all-paid-duly">All Paid Duly</option>
+                            <option value="bank-paid-duly">Bank Paid Duly</option>
+                        </select><br><br>
+                        
+                        Job: 
+                        <select id="Job" name="Job">
+                            <option value="skilled">Skilled</option>
+                            <option value="unskilled-resident">Unskilled Resident</option>
+                            <option value="management">Management</option>
+                            <option value="unemployed-non-resident">Unemployed Non-Resident</option>
+                        </select><br><br>
+                       
+                        Marital status: 
+                        <select id="Marital_status" name="Marital_status">
+                            <option value="single-male">Single (Male)</option>
+                            <option value="female-divorced">Female (Divorced)</option>
+                            <option value="male-divorced">Male (Divorced)</option>
+                            <option value="married-male">Married (Male)</option>
+                        </select><br><br>
+                        Co-applicant: 
+                        <select id="Co_applicant" name="Co_applicant">
+                            <option value="co-applicant">Co-Applicant</option>
+                            <option value="guarantor">Guarantor</option>
+                            <option value="none">none</option>
+                        </select><br><br>
+                        Duration of Credit in Months:
+                        <input type="number" id="Duration" name="Duration"> <br><br>
+                        
+                        Install Rate: 
+                        <input type="radio" id="install-rate-1" name="Install_rate" value="1"> 1 &nbsp;&nbsp;
+                        <input type="radio" id="install-rate-2" name="Install_rate" value="2"> 2 &nbsp;&nbsp;
+                        <input type="radio" id="install-rate-3" name="Install_rate" value="3"> 3 &nbsp;&nbsp;
+                        <input type="radio" id="install-rate-4" name="Install_rate" value="4"> 4 &nbsp;&nbsp;
+                        <input type="radio" id="install-rate-5" name="Install_rate" value="5"> 5 &nbsp;&nbsp;<br><br>
+                        No of Dependents: 
+                        <input type="radio" id="No_dependents-1" name="No_dependents" value="1"> 1 &nbsp;&nbsp;
+                        <input type="radio" id="No_dependents-2" name="No_dependents" value="2"> 2 &nbsp;&nbsp;<br><br>   
+                        Age:
+                        <input type="number" name="Age" id="Age"><br><br>
+                        Phone: 
+                        <input type="radio" id="phone-yes" name="Phone" value="yes"> Yes &nbsp;&nbsp;
+                        <input type="radio" id="phone-no" name="Phone" value="no"> No &nbsp;&nbsp;<br><br>
+                    </div>
+
+
+                    <div class="form_left">
+                        Purpose of credit: 
+                        <select id="Purpose" name="Purpose_of_credit">
+                            <option value="radio-tv">Radio/TV</option>
+                            <option value="education">Education</option>
+                            <option value="furniture">Furniture</option>
+                            <option value="new-car">New Car</option>
+                            <option value="used-car">Used Car</option>
+                            <option value="business">Business</option>
+                            <option value="domestic-app">Domestic Appliances</option>
+                            <option value="repairs">Repairs</option>
+                            <option value="retraining">Retraining</option>
+                            <option value="others">Others</option>
+                        </select><br><br>
+                        Balance in Savings A/C: 
+                        <select id="balance" name="Balance_in_Savings_Acct">
+                            <option value="unknown">Unknown</option>
+                            <option value="less100DM">Less than 100 DM</option>
+                            <option value="less500DM">Less than 500 DM</option>
+                            <option value="less1000DM">Less than 1000 DM</option>
+                            <option value="over1000DM">Over 1000 DM</option>
+                        </select><br><br>
+                    
+                        Employment: 
+                        <select id="employment" name="Employment">
+                            <option value="unemployed">Unemployed</option>
+                            <option value="one-year">One Year</option>
+                            <option value="four-years">Four Years</option>
+                            <option value="seven-years">Seven Years</option>
+                            <option value="over-seven">Over Seven Years</option>
+                        </select><br><br>
+                        
+                        Real Estate: 
+                        <select id="real-estate" name="Real_Estate">
+                            <option value="car">Car</option>
+                            <option value="real-estate">Real Estate</option>
+                            <option value="building-society">Building Society</option>
+                            <option value="none">None</option>
+                        </select><br><br>
+                        Other Installment: 
+                        <select id="other-installment" name="Other_installment">
+                            <option value="bank">Bank</option>
+                            <option value="stores">Stores</option>
+                            <option value="none">None</option>
+                        </select><br><br>
+                        Credit Amount:
+                        <input type="number" name="Credit_Amount"> <br><br>
+                        
+                        Num_Credits:
+                        <input type="radio" id="num-credits-1" name="Num_Credits" value="1"> 1  &nbsp;&nbsp;
+                        <input type="radio" id="num-credits-2" name="Num_Credits" value="2"> 2  &nbsp;&nbsp;
+                        <input type="radio" id="num-credits-3" name="Num_Credits" value="3"> 3  &nbsp;&nbsp;
+                        <input type="radio" id="num-credits-4" name="Num_Credits" value="4"> 4  &nbsp;&nbsp;
+                        <input type="radio" id="num-credits-5" name="Num_Credits" value="5"> 5  &nbsp;&nbsp;<br><br>
+                        Present Resident:
+                        <input type="radio" id="Present_Resident-1" name="Present_Resident" value="1"> 1  &nbsp;&nbsp;
+                        <input type="radio" id="Present_Resident-2" name="Present_Resident" value="2"> 2  &nbsp;&nbsp;
+                        <input type="radio" id="Present_Resident-3" name="Present_Resident" value="3"> 3  &nbsp;&nbsp;
+                        <input type="radio" id="Present_Resident-4" name="Present_Resident" value="4"> 4  &nbsp;&nbsp;
+                        <input type="radio" id="Present_Resident-5" name="Present_Resident" value="5"> 5  &nbsp;&nbsp;<br><br>
+                        Residence: 
+                        <input type="radio" id="residence-own" name="Residence" value="own"> Own &nbsp;&nbsp;
+                        <input type="radio" id="residence-free" name="Residence" value="free"> Free &nbsp;&nbsp;
+                        <input type="radio" id="residence-rent" name="Residence" value="rent"> Rent &nbsp;&nbsp;<br><br>
+                        Foreign: 
+                        <input type="radio" id="foreign-yes" name="Foreign" value="yes"> Yes &nbsp;&nbsp;
+                        <input type="radio" id="foreign-no" name="Foreign" value="no"> No &nbsp;&nbsp;<br><br>
+                    </div>
+                    <div class="form_btn">
+                        <img src="{{ url_for('static', filename='credit_card.svg') }}" width="250px">
+                        <button type="submit">Predict Credit Card Classification</button>
+                    </div>
+                    </div>
+                </form>
+            </div>
+{% endblock %}
